@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HueMory - Remember Life Your Way</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<main id="homeScreen" class="home-screen">
+
+    <nav class="home-nav">
+
+        <div class="brand">
+            <span class="brand-star">✦</span>
+            HueMory
+        </div>
+
+        <button id="myMemories" class="nav-button">
+            My Memories
+        </button>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="eyebrow">
+                YOUR PERSONAL MEMORY SPACE
+            </p>
+
+            <h1>
+                Remember your days
+                <span>in colour.</span>
+            </h1>
+
+            <p class="hero-description">
+                Turn everyday feelings into memories you can
+                revisit. Reflect on your day, keep the moments
+                that matter and watch your story grow.
+            </p>
+
+            <button id="startReflection" class="primary-button">
+                Start Today's Reflection
+                <span>→</span>
+            </button>
+
+
+            <div class="colour-message">
+
+                <div class="colour-dots">
+                    <span class="dot happy"></span>
+                    <span class="dot calm"></span>
+                    <span class="dot okay"></span>
+                    <span class="dot tired"></span>
+                    <span class="dot difficult"></span>
+                </div>
+
+                <p>Every feeling belongs here.</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-mascot-area">
+
+            <div class="mascot-background"></div>
+
+            <img
+                src="huemory-mascot.png"
+                alt="HueMory memory companion"
+                class="hero-mascot"
+            >
+
+            <div class="floating-note note-one">
+                <span>☀</span>
+                <div>
+                    <strong>Today's feeling</strong>
+                    <small>Turn it into a memory</small>
+                </div>
+            </div>
+
+            <div class="floating-note note-two">
+                <span>♡</span>
+                <div>
+                    <strong>Your story</strong>
+                    <small>One hue at a time</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MOOD
+===================================================== -->
+
+<main id="moodScreen" class="app-screen hidden">
+
+    <header class="app-header">
+
+        <button id="backHome" class="back-button">
+            ← Back
+        </button>
+
+        <span class="screen-brand">
+            ✦ HueMory
+        </span>
+
+        <button class="home-button">
+            Home
+        </button>
+
+    </header>
+
+
+    <div class="progress-section">
+
+        <div class="progress-info">
+            <span>Reflection</span>
+            <span>Step 1 of 3</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress progress-one"></div>
+        </div>
+
+    </div>
+
+
+    <section class="screen-introduction">
+
+        <img
+            src="huemory-mascot.png"
+            alt=""
+            class="small-mascot"
+        >
+
+        <p class="eyebrow">LET'S BEGIN</p>
+
+        <h1>How did today feel?</h1>
+
+        <p>
+            Choose everything that fits.
+            You can select more than one.
+        </p>
+
+    </section>
+
+
+    <section class="mood-options">
+
+        <button class="mood-option mood-happy" data-mood="Happy">
+
+            <span class="mood-icon">☀</span>
+
+            <span class="mood-information">
+                <strong>Happy</strong>
+                <small>Bright & joyful</small>
+            </span>
+
+            <span class="selected-check">✓</span>
+
+        </button>
+
+
+        <button class="mood-option mood-calm" data-mood="Calm">
+
+            <span class="mood-icon">❋</span>
+
+            <span class="mood-information">
+                <strong>Calm</strong>
+                <small>Peaceful & steady</small>
+            </span>
+
+            <span class="selected-check">✓</span>
+
+        </button>
+
+
+        <button class="mood-option mood-okay" data-mood="Okay">
+
+            <span class="mood-icon">◌</span>
+
+            <span class="mood-information">
+                <strong>Okay</strong>
+                <small>An ordinary kind of day</small>
+            </span>
+
+            <span class="selected-check">✓</span>
+
+        </button>
+
+
+        <button class="mood-option mood-tired" data-mood="Tired">
+
+            <span class="mood-icon">☾</span>
+
+            <span class="mood-information">
+                <strong>Tired</strong>
+                <small>Low on energy</small>
+            </span>
+
+            <span class="selected-check">✓</span>
+
+        </button>
+
+
+        <button class="mood-option mood-difficult" data-mood="Difficult">
+
+            <span class="mood-icon">♡</span>
+
+            <span class="mood-information">
+                <strong>Difficult</strong>
+                <small>A heavier kind of day</small>
+            </span>
+
+            <span class="selected-check">✓</span>
+
+        </button>
+
+    </section>
+
+
+    <p id="moodMessage" class="validation-message"></p>
+
+
+    <div class="bottom-action">
+
+        <button id="continueMood" class="primary-button">
+            Continue →
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     DIARY
+===================================================== -->
+
+<main id="diaryScreen" class="app-screen hidden">
+
+    <header class="app-header">
+
+        <button id="backMood" class="back-button">
+            ← Back
+        </button>
+
+        <span class="screen-brand">
+            ✦ HueMory
+        </span>
+
+        <button class="home-button">
+            Home
+        </button>
+
+    </header>
+
+
+    <div class="progress-section">
+
+        <div class="progress-info">
+            <span>Reflection</span>
+            <span>Step 2 of 3</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress progress-two"></div>
+        </div>
+
+    </div>
+
+
+    <section class="conversation">
+
+        <img
+            src="huemory-mascot.png"
+            alt=""
+            class="conversation-mascot"
+        >
+
+        <div>
+
+            <p class="eyebrow">
+                TELL ME ABOUT IT
+            </p>
+
+            <h1>What made today yours?</h1>
+
+            <p>
+                Big moments, tiny details and random thoughts
+                all belong in your memory.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="journal-card">
+
+        <label for="diaryEntry">
+            Today's Story
+        </label>
+
+        <textarea
+            id="diaryEntry"
+            rows="9"
+            placeholder="Start wherever feels natural..."
+        ></textarea>
+
+        <p id="diaryMessage" class="validation-message"></p>
+
+
+        <div class="photo-section">
+
+            <div class="photo-title">
+
+                <div>
+                    <strong>Add a photo</strong>
+                    <span>Optional</span>
+                </div>
+
+                <p>
+                    Keep a visual piece of today.
+                </p>
+
+            </div>
+
+
+            <label for="memoryPhoto" class="photo-upload">
+
+                <span class="upload-symbol">＋</span>
+
+                <span>
+                    <strong>Choose a photo</strong>
+                    <small>JPG, PNG or WEBP · Maximum 5 MB</small>
+                </span>
+
+            </label>
+
+
+            <input
+                type="file"
+                id="memoryPhoto"
+                accept="image/png,image/jpeg,image/webp"
+            >
+
+            <p id="photoMessage" class="validation-message"></p>
+
+        </div>
+
+
+        <div class="bottom-action">
+
+            <button id="continueDiary" class="primary-button">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOLLOW-UP
+===================================================== -->
+
+<main id="followupScreen" class="app-screen hidden">
+
+    <header class="app-header">
+
+        <button id="backDiary" class="back-button">
+            ← Back
+        </button>
+
+        <span class="screen-brand">
+            ✦ HueMory
+        </span>
+
+        <button class="home-button">
+            Home
+        </button>
+
+    </header>
+
+
+    <div class="progress-section">
+
+        <div class="progress-info">
+            <span>Reflection</span>
+            <span>Step 3 of 3</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress progress-three"></div>
+        </div>
+
+    </div>
+
+
+    <section class="conversation">
+
+        <img
+            src="huemory-mascot.png"
+            alt=""
+            class="conversation-mascot"
+        >
+
+        <div>
+
+            <p class="eyebrow">
+                ONE LITTLE THING
+            </p>
+
+            <h1>Before we save today...</h1>
+
+            <p>
+                There's one more thing I'd like
+                you to think about.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="question-card">
+
+        <span class="quote">“</span>
+
+        <p id="followupQuestion">
+            Your question will appear here.
+        </p>
+
+    </section>
+
+
+    <section class="journal-card">
+
+        <label for="followupAnswer">
+            Your Answer
+        </label>
+
+        <textarea
+            id="followupAnswer"
+            rows="7"
+            placeholder="Write whatever comes to mind..."
+        ></textarea>
+
+        <p id="followupMessage" class="validation-message"></p>
+
+
+        <div class="bottom-action">
+
+            <button id="continueFollowup" class="primary-button">
+                Create My Memory ✦
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MEMORY PREVIEW
+===================================================== -->
+
+<main id="previewScreen" class="app-screen hidden">
+
+    <header class="app-header">
+
+        <button id="backFollowup" class="back-button">
+            ← Back
+        </button>
+
+        <span class="screen-brand">
+            ✦ HueMory
+        </span>
+
+        <button class="home-button">
+            Home
+        </button>
+
+    </header>
+
+
+    <section class="completion">
+
+        <img
+            src="huemory-mascot.png"
+            alt=""
+            class="completion-mascot"
+        >
+
+        <p class="eyebrow">
+            ✦ MEMORY CREATED
+        </p>
+
+        <h1>
+            Another piece of your story.
+        </h1>
+
+        <p id="avatarResponse"></p>
+
+    </section>
+
+
+    <article class="memory-preview">
+
+        <header class="memory-preview-header">
+
+            <div>
+
+                <span class="memory-brand">
+                    HUEMORY
+                </span>
+
+                <h2>Your Memory</h2>
+
+            </div>
+
+            <p id="previewDate" class="memory-date"></p>
+
+        </header>
+
+
+        <section class="preview-section">
+
+            <span class="preview-label">
+                HOW TODAY FELT
+            </span>
+
+            <div
+                id="previewMoods"
+                class="preview-moods"
+            ></div>
+
+        </section>
+
+
+        <section class="preview-section">
+
+            <span class="preview-label">
+                TODAY'S STORY
+            </span>
+
+            <p
+                id="previewDiary"
+                class="preview-diary"
+            ></p>
+
+        </section>
+
+
+        <section class="preview-section">
+
+            <span class="preview-label">
+                ONE MORE THOUGHT
+            </span>
+
+            <h3 id="previewQuestion"></h3>
+
+            <p id="previewAnswer"></p>
+
+        </section>
+
+
+        <section
+            id="previewPhotoContainer"
+            class="preview-photo-container hidden"
+        >
+
+            <span class="preview-label">
+                A PIECE OF TODAY
+            </span>
+
+            <img
+                id="previewPhoto"
+                class="preview-photo"
+                alt="Photo added to this memory"
+            >
+
+        </section>
+
+
+        <div class="preview-actions">
+
+            <button
+                id="editMemory"
+                class="secondary-button"
+            >
+                Edit Memory
+            </button>
+
+            <button
+                id="saveMemory"
+                class="primary-button"
+            >
+                Save Memory ♡
+            </button>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<!-- =====================================================
+     MY MEMORIES
+===================================================== -->
+
+<main id="memoriesScreen" class="memories-screen hidden">
+
+    <header class="app-header">
+
+        <button id="backFromMemories" class="back-button">
+            ← Back
+        </button>
+
+        <span class="screen-brand">
+            ✦ HueMory
+        </span>
+
+        <button class="home-button">
+            Home
+        </button>
+
+    </header>
+
+
+    <section class="collection-heading">
+
+        <p class="eyebrow">
+            YOUR STORY IN COLOUR
+        </p>
+
+        <h1>My Memories</h1>
+
+        <p>
+            Every day leaves a little hue behind.
+            Here are yours.
+        </p>
+
+    </section>
+
+
+    <section
+        id="memoriesList"
+        class="memories-list"
+    ></section>
+
+
+    <section
+        id="emptyMemories"
+        class="empty-memories hidden"
+    >
+
+        <img
+            src="huemory-mascot.png"
+            alt=""
+            class="empty-mascot"
+        >
+
+        <h2>Your story starts here.</h2>
+
+        <p>
+            Save your first reflection and
+            it will appear here.
+        </p>
+
+    </section>
+
+
+    <button
+        id="newReflection"
+        class="primary-button new-reflection-button"
+    >
+        ＋ New Reflection
+    </button>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
